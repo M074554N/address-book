@@ -4,7 +4,6 @@ namespace AppBundle\Entity\AddressBook;
 
 use AppBundle\Validator\Constraints\Phone;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Validator\Constraints\Country;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Image;
