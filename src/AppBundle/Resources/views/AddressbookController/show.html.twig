@@ -1,0 +1,85 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Show Contact:
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .contact-image {
+            width: 100px !important;
+            border-radius: 10px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p class="mt-4">
+        <a href="/all">Back to all contacts</a>
+    </p>
+    <div class="card mt-4">
+        <div class="card-header">
+            Contact Details
+
+            <a href="/edit/{{ entry.id }}" class="btn btn-success float-right">Edit</a>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12 text-center">
+                    {% if entry.image %}
+                        <img class="contact-image" src="{{ asset('images/contacts/') ~ entry.image}}" alt="{{ entry.firstname }}">
+                    {% else %}
+                        <img class="contact-image" src="{{ asset('images/avatar.webp') }}" alt="{{ entry.firstname }}">
+                    {% endif %}
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    Email Address: <a href="mailto:{{ entry.email }}">{{ entry.email }}</a>
+                </div>
+                <div class="col-6">
+                    Phone: <a href="tel:{{ entry.phone }}">{{ entry.phone }}</a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    First Name: {{ entry.firstname }}
+                </div>
+                <div class="col-6">
+                    Last Name: {{ entry.lastname }}
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    Street: {{ entry.street ?? '-' }}
+                </div>
+                <div class="col-6">
+                    Zip: {{ entry.zip ?? '-' }}
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    City: {{ entry.city ?? '-' }}
+                </div>
+                <div class="col-6">
+                    Country: {{ entry.country ?? '-' }}
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    Birthday: {{ entry.birthday ? entry.birthday|date('Y-m-d') : '-' }}
+                </div>
+                <div class="col-6">
+                    Country: {{ entry.country ?? '-' }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

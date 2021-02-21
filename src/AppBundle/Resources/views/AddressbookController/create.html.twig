@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Add a new contact{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p class="mt-4">
+        <a href="/all">Back to all contacts</a>
+    </p>
+    <div class="card mt-4 mb-4">
+        <div class="card-header">
+            Add a new contact
+        </div>
+        <div class="card-body">
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
