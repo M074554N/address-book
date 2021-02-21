@@ -124,8 +124,6 @@ class AddressbookControllerController extends Controller
 
 		$this->checkIfContactExists($entry);
 
-//		dump($entry->getBirthday());die;
-
         return $this->render('@App/AddressbookController/show.html.twig', [
         	'entry' => $entry,
 		]);
